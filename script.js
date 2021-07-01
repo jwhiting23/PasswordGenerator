@@ -28,7 +28,7 @@ form.addEventListener('submit', e => {
   const includeNumbers = includeNumbersElement.checked
   const includeSymbols = includeSymbolsElement.checked
   const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
-  passwordDisplay.innerText = password //not sure
+  passwordDisplay.innerText = password 
 })
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
@@ -39,11 +39,11 @@ function generatePassword(characterAmount, includeUppercase, includeNumbers, inc
     
     const passwordCharacters = []
     for (let i= 0; i < characterAmount; i++) {
-      //const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
-      //passwordCharacters.push(string.fromCharCode(characterCode)) //gives error
+      const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+      passwordCharacters.push(String.fromCharCode(characterCode)) //fixed Error S
 
-      const character = charCodes[Math.floor(Math.random() * characterAmount)]
-      passwordCharacters.push(character) //Works
+      //const character = charCodes[Math.floor(Math.random() * characterAmount)]
+      //passwordCharacters.push(character) //Works
 
       //const characterCode = charCodes[Math.floor(Math.random() * characterAmount)]
       //passwordCharacters.push(string.fromCharCode(characterCode)) 
@@ -67,4 +67,4 @@ function syncCharacterAmount(e) {
   characterAmountRange.value = value
 }
 
-//console.log("Helloworld")
+
